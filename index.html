@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code Generator - Quick and Easy</title>
+    <meta name="description" content="Generate free QR codes online instantly. Customize size, color, and download as PNG. Perfect for URLs, text, WiFi, and more.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Free QR Code Generator</h1>
+        <p>Create custom QR codes in seconds. No sign-up required!</p>
+    </header>
+    
+    <main>
+        <section id="input-section">
+            <label for="qr-text">Enter text or URL:</label>
+            <textarea id="qr-text" placeholder="e.g., https://example.com or your message"></textarea>
+            
+            <div class="options">
+                <label for="qr-size">Size (pixels):</label>
+                <input type="number" id="qr-size" value="200" min="100" max="500">
+                
+                <label for="qr-color">Color:</label>
+                <input type="color" id="qr-color" value="#000000">
+                
+                <label for="qr-bg-color">Background Color:</label>
+                <input type="color" id="qr-bg-color" value="#ffffff">
+            </div>
+            
+            <button id="generate-btn">Generate QR Code</button>
+        </section>
+        
+        <section id="output-section">
+            <div id="qrcode"></div>
+            <button id="download-btn" disabled>Download PNG</button>
+        </section>
+        
+        <!-- Placeholder for AdSense ad (replace with your AdSense code) -->
+        <aside class="ad">
+            <!-- Sample ad; integrate real AdSense here -->
+            <img src="https://via.placeholder.com/300x250?text=Ad+Space" alt="Ad">
+        </aside>
+        
+        <section id="affiliates">
+            <h2>Need More? Check These Out</h2>
+            <p>Affiliate: Get custom QR stickers from <a href="https://amazon.com?aff=yourid" target="_blank" rel="nofollow">Amazon</a> (earn commission).</p>
+            <p>Upgrade to pro features with <a href="https://qrcodemonkey.com?aff=yourid" target="_blank" rel="nofollow">QRCode Monkey</a>.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Free QR Code Generator. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
