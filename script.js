@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const qrForm = document.getElementById('qr-form');
     const qrText = document.getElementById('qr-text');
     const qrSize = document.getElementById('qr-size');
     const qrColor = document.getElementById('qr-color');
     const qrBgColor = document.getElementById('qr-bg-color');
-    const generateBtn = document.getElementById('generate-btn');
+    const outputSection = document.getElementById('output-section');
     const downloadBtn = document.getElementById('download-btn');
     const qrCodeDiv = document.getElementById('qrcode');
 
     let qrCode;
 
-    generateBtn.addEventListener('click', () => {
+    qrForm.addEventListener('submit', (e) => {
+        e.preventDefault();
         const text = qrText.value.trim();
         if (!text) {
             alert('Please enter some text or URL.');
@@ -26,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
             correctLevel: QRCode.CorrectLevel.H
         });
 
-        downloadBtn.disabled = false;
+        outputSection.classList.remove('hidden');
+        // Scroll to output smoothly
+        outputSection.scrollIntoView({ behavior: 'smooth' });
     });
 
     downloadBtn.addEventListener('click', () => {

@@ -1,105 +1,190 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 header {
-    background-color: #007bff;
+    background-color: #0d6efd;
     color: white;
+    padding: 40px 0;
     text-align: center;
-    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
 }
 
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    flex: 1;
+    padding: 40px 0;
 }
 
 #input-section {
-    margin-bottom: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 label {
     display: block;
-    margin: 10px 0 5px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-textarea {
+textarea, input[type="number"], input[type="color"] {
     width: 100%;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.15s ease-in-out;
+}
+
+textarea:focus, input:focus {
+    border-color: #0d6efd;
+    outline: none;
 }
 
 .options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
 }
 
-.options input {
-    flex: 1;
-    min-width: 100px;
-    padding: 5px;
+.option-group {
+    display: flex;
+    flex-direction: column;
 }
 
 button {
-    background-color: #28a745;
+    background-color: #198754;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 100%;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #157347;
+    transform: translateY(-2px);
 }
 
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+button:active {
+    transform: translateY(0);
 }
 
 #output-section {
     text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 #qrcode {
     margin: 20px auto;
-    border: 1px solid #ddd;
+    display: inline-block;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
     padding: 10px;
     background: white;
 }
 
+#download-btn {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
 .ad {
-    margin: 20px 0;
     text-align: center;
+    margin: 30px 0;
 }
 
 #affiliates {
-    margin-top: 30px;
-    padding: 10px;
     background: #e9ecef;
-    border-radius: 4px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#affiliates h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background: #007bff;
+    background-color: #0d6efd;
     color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    #input-section, #output-section {
+        padding: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#output-section:not(.hidden) {
+    animation: fadeIn 0.5s ease-out;
 }
