@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free QR Code Generator - Quick and Modern</title>
-    <meta name="description" content="Generate free QR codes online instantly. Customize size, colors, and download as PNG. Perfect for URLs, text, WiFi, and more.">
+    <meta name="description" content="Generate free QR codes online instantly. Customize size, colors, styles, add logo, and download as PNG. Perfect for URLs, text, WiFi, and more.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
 </head>
 <body>
     <header>
@@ -35,6 +35,18 @@
                     <div class="option-group">
                         <label for="qr-bg-color">Background Color:</label>
                         <input type="color" id="qr-bg-color" value="#ffffff">
+                    </div>
+                    <div class="option-group">
+                        <label for="qr-style">QR Style:</label>
+                        <select id="qr-style">
+                            <option value="square">Square</option>
+                            <option value="rounded">Rounded</option>
+                            <option value="dots">Dots</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="qr-logo">Upload Logo (optional):</label>
+                        <input type="file" id="qr-logo" accept="image/*">
                     </div>
                 </div>
                 
